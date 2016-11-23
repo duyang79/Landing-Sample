@@ -1,0 +1,396 @@
+<html>
+
+<head>
+	<title>DMT Landing Page</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="https://raw.github.com/duyang79/landing_page/files/css/layout.css" />
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+	<script>
+		$(document).on('click', 'a', function(event) {
+			event.preventDefault();
+
+			$('html, body').animate({
+				scrollTop: $($.attr(this, 'href')).offset().top
+			}, 500);
+		});
+		$(function() {
+			$('#learnhow').hover(function() {
+				$('#page-1').fadeOut(400);
+				$('#cyan_back').fadeOut("slow");
+				setTimeout(function() {
+					$('#page-2').stop().fadeTo("fast", 1)
+				}, 600);
+			});
+		});
+		window.onload = function() {
+
+			var height = $("#leftmiddle").height();
+			if ($(document).width() > 1024) {
+				$("#rightmiddle").css('height', height);
+				$("#middle").css('height',height);
+			}
+			var common_div = $(".common_div");
+			common_div.css('height', common_div.width() * 0.23);
+
+			var icon_ul = $("#icon_ul li");
+			var info_ul = $("#info_ul li");
+			var timer = play = null;
+			var i = index = 0;
+			for (i = 0; i < icon_ul.length; i++) {
+				icon_ul[i].index = i;
+				icon_ul[i].onmouseover = function() {
+					show(this.index)
+				}
+			}
+
+			icon_ul.onmouseover = function() {
+				clearInterval(play)
+			};
+
+			icon_ul.onmouseout = function() {
+				autoPlay()
+			};
+
+			function autoPlay() {
+				play = setInterval(function() {
+					index++;
+					index >= info_ul.length && (index = 0);
+					show(index);
+				}, 4000);
+			}
+			autoPlay();
+
+			function show(a) {
+				index = a;
+				var alpha = 0;
+				for (i = 0; i < icon_ul.length; i++) icon_ul[i].className = "";
+				clearInterval(timer);
+				for (i = 0; i < info_ul.length; i++) {
+					info_ul[i].style.opacity = 0;
+					info_ul[i].style.filter = "alpha(opacity=0)";
+				}
+
+				timer = setInterval(function() {
+					alpha += 2;
+					alpha > 100 && (alpha = 100);
+					info_ul[index].style.opacity = alpha / 100;
+					info_ul[index].style.filter = "alpha(opacity = " + alpha + ")";
+					alpha == 100 && clearInterval(timer)
+				}, 20);
+			}
+		};
+	</script>
+</head>
+
+<body>
+	</script>
+	<div id="cyan_back"> </div>
+	<div id="backdiv">
+		<div id="container">
+			<div id="heading">
+				<div id="page-1">
+					<div class="headpicdiv">
+						<img class="titlepic" src="images/title1.png" alt="Title1" />
+					</div>
+					<div class="buttonareadiv">
+						<div class="buttonlinediv">
+							<a id="learnhow" class="pageload-link" href="">
+								<p class="button_p"><span><font>LEARN HOW</font></span></p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="page-2">
+					<div class="headpicdiv">
+						<img class="titlepic" src="images/title2.png" alt="Title2" />
+					</div>
+					<div class="buttonareadiv">
+						<div class="buttonlinediv">
+							<a href="#rightmiddle">
+								<p class="button_p"><span><font>INTERESTED?</font></span></p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="middle">
+				<div id="leftmiddle">
+					<div id="leftcontent">
+						<p id="lefttitle">
+							<font id="middlelefttitlefont"><u>Diploma of Digital Media Technologies</u></font>
+						</p>
+						<p>
+							<font class="middleleftcontentfont">Digital Media Technologies is the fastest growing industry in the world. Having skills in this industry will set you up for life.<b></b></font>
+						</p>
+						<p>
+							<font class="middleleftcontentfont">With demand for well trained Digital Media experts rising across the globe. This qualification will provide the opportunity to combine your passion with new found skills in industry sectors such as Social Media Marketing, film, app & web development,
+								video and sound production. This knowledge combined with your artistic flair will deliver success in employment or self- employment, anywhere in the world.<b></b></font>
+						</p>
+						<p>
+							<font class="middleleftcontentfont">If you consider yourself tech savvy, want to take your passion to the next level and assist you to get paid doing what you love…this is your pathway. We understand that you have developed skill in this area already, most likely 'self-taught' and
+								while we love that initiative;<b></b></font>
+						</p>
+						<p>
+							<font class="middleleftcontentfont">It's now time to formalize your training. By spending time networking with industry professionals and being mentored. </b>
+							</font>
+						</p>
+					</div>
+				</div>
+
+
+
+					<div id="rightmiddle">
+						<form id="registerForm" method="post" action="">
+							<table id="formTable">
+								<tr>
+									<td id="findoutmore">&nbsp;</td>
+								</tr>
+								<tr>
+									<td><input id="firstname" type="text" name="firstname" placeholder="First Name"></td>
+								</tr>
+								<tr>
+									<td><input id="lastname" type="text" name="lastname" placeholder="Last Name"></td>
+								</tr>
+								<tr>
+									<td><input id="email" type="text" name="email" placeholder="Email Address"></td>
+								</tr>
+								<tr>
+									<td><input id="number" type="text" name="number" placeholder="Phone Number"></td>
+								</tr>
+								<tr>
+									<td><select dir="rtl" id="state" name="state" required>
+                  <option selected="selected" disabled="disabled" value="">Pick a State</option>
+                  <option value="act">Australian Capital Territory</option>
+                  <option value="jbt">Jervis Bay Territory</option>
+                  <option value="nt">Northern Territory</option>
+                  <option value="NSW">New South Wales</option>
+                  <option value="QLD">Queensland</option>
+                  <option value="SA">South Australia</option>
+                  <option value="TAS">Tasmania</option>
+                  <option value="VIC">Victoria</option>
+                  <option value="WA">Western Australia</option>
+                </select></td>
+								</tr>
+								<tr>
+									<td><select dir="rtl" id="employment" name="employment" required>
+                  <option selected="selected" disabled="disabled" value="">You are currently</option>
+                  <option value="ef">Employed Full-time</option>
+                  <option value="ep">Employed Part-time</option>
+                  <option value="ue">Unemployed</option>
+                  <option value="st">Studying</option>
+                </select></td>
+								</tr>
+								<tr>
+									<td class="td_radio">
+										<p class="td_radio_intro">
+											<font class="radiotitle"><b>Are you and Australian Citizen?</b></font>
+										</p>
+										<p>
+											<label class="radio_label">
+                  <label>
+                    <input type="radio" name="isAu"/ required>
+                    <span><font class="YN">Y</font></span>
+									</label>
+											<label>
+                    <input type="radio" name="isAu"/>
+                    <span><font class="YN">N</font></span>
+									</label>
+											</label>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td class="td_radio">
+										<p class="td_radio_intro">
+											<font class="radiotitle"><b>Are you aged between 18 - 65?</b></font>
+										</p>
+										<p>
+											<label class="radio_label">
+                  	<label>
+                    	<input type="radio" name="age"/ required>
+                    	<span><font class="YN">Y</font></span>
+										</label>
+											<label>
+                    	<input type="radio" name="age"/>
+                    	<span><font class="YN">N</font></span>
+										</label>
+											</label>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td id="submittd"><button type="submit" id="enroll">&nbsp;</button></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</div>
+
+				<div class="common_div" id="slideshow">
+					<ul id="icon_ul">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul id="info_ul">
+						<li>
+							<p class="ptitle">
+								<font class="titlefont"><b>Web Development</b></font>
+							</p>
+							<p>
+								<font class="contentfont">If you don't like this website, learn how to do it better. Your websites should represent brands online like retail stores should in a mall.</font>
+							</p>
+							<p>
+								<font class="contentfont">It's called 'First Contact Marketing', and companies will look for someone to develop theirs. Why not you?</font>
+							</p>
+						</li>
+						<li class="hide_content">
+							<p class="ptitle">
+								<font class="titlefont"><b>3d Modelling</b></font>
+							</p>
+							<p>
+								<font class="contentfont">Let your imagination run wild and bring your characters to life.</font>
+							</p>
+							<p>
+								<font class="contentfont">3D animation will give you a unique advantage across the I.T, game design, and film industry. Deliver next generation visuals.</font>
+							</p>
+						</li>
+						<li class="hide_content">
+							<p class="ptitle">
+								<font class="titlefont"><b>Video Production</b></font>
+							</p>
+							<p>
+								<font class="contentfont">Create, produce, edit & showcase.</font>
+							</p>
+							<p>
+								<font class="contentfont">Sleek videos are professional and dynamic. They are the difference between good content and great content.</font>
+							</p>
+							<p>
+								<font class="contentfont">Learn how to shoot and edit to deliver maximum information in a 30 second sound bite.</font>
+							</p>
+						</li>
+						<li class="hide_content">
+							<p class="ptitle">
+								<font class="titlefont"><b>App Development</b></font>
+							</p>
+							<p>
+								<font class="contentfont">Mobiles phones communicate nothing, Apps do.</font>
+							</p>
+							<p>
+								<font class="contentfont">Create powerful verbal, visual and interactive communications between people and businesses. Put your ideas into every pocket.</font>
+							</p>
+						</li>
+						<li class="hide_content">
+							<p class="ptitle">
+								<font class="titlefont"><b>Digital Marketing</b></font>
+							</p>
+							<p>
+								<font class="contentfont">Creativity needs to be shown off. Get yours seen on Social Media and the web.</font>
+							</p>
+							<p>
+								<font class="contentfont">Effective Digital Marketing directs the attention of the right people to the right information.</font>
+							</p>
+							<p>
+								<font class="contentfont">How do you think we got you here? </font>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div id="circlediv" class="common_div">
+					<div id="circle1a" class="circle circle_a">
+						<div class="textdiv textdiva">
+							<font id="circle1afont"><b>Flexible Study Options</b></font>
+						</div>
+						<div id="circle1b" class="circle circle_b">
+							<div class="textdiv textdivb">
+								<font id="circle1bfont"><b>Online? Blended? Campus?</b></font>
+							</div>
+						</div>
+					</div>
+					<div id="circle2a" class="circle circle_a">
+						<div id="textdivmid" class="textdiv textdiva">
+							<font id="circle2afont"><b>Real Job Support</b></font>
+						</div>
+						<div id="circle2b" class="circle circle_b">
+							<div id="textdivmid2" class="textdiv textdivb">
+								<font id="circle2bfont"><b>Upon completion, work with industry leaders to help you into the work-force.</b></font>
+							</div>
+						</div>
+					</div>
+					<div id="circle3a" class="circle circle_a">
+						<div class="textdiv textdiva">
+							<font id="circle3afont"><b>Payment Support Availible</b></font>
+						</div>
+						<div id="circle3b" class="circle circle_b">
+							<div id="textdivright2" class="textdiv textdivb">
+								<font id="circle3bfont"><b>Study now, Pay later. Options available</b></font>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="common_div"> <div id="whyepw" ></div></div>
+				<div class="common_div"> <div id="andrew" ></div></div>
+				<div id="policy" class="common_div" >
+					<a href="#middle">
+						<div id="find"></div>
+					</a>
+				</div>
+			</div>
+	</div>
+	<script>
+		(function() {
+			var heading_div = $("#heading");
+			var page_2_div = $("#page-2");
+			var width = heading_div.width();
+			heading_div.css('height', width * 0.55);
+			page_2_div.css('height', width * 0.55);
+			$("#registerForm").validate({
+				rules: {
+					firstname: {
+						required: true
+					},
+					lastname: {
+						required: true
+					},
+					email: {
+						required: true,
+						email: true
+					},
+					number: {
+						required: true,
+						digits: true
+					},
+					state: {
+						required: true
+					},
+					employment: {
+						required: true
+					},
+					isAu: {
+						required: true
+					},
+					age: {
+						required: true
+					}
+				},
+				messages: {
+					firstname: "",
+					lastname: "",
+					email: "",
+					number: "",
+					state: "",
+					employment: "",
+					isAu: "Please select here: ",
+					age: "Please select here: "
+				}
+
+			});
+
+		})();
+	</script>
+</body>
+
+</html>
