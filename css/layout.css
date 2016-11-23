@@ -519,7 +519,7 @@ label.radio_label :checked ~ span {
 	background-size:100% 100%;
 }
 #policy {
-	background:url(../images/policy.jpg) top center no-repeat;
+	background:url(../images/policy.png) top center no-repeat;
 	background-size:100% 70%;
 	width:60%;
 	margin:0 auto;
