@@ -90,14 +90,10 @@ input {
 }
 select {
 	width:100%;
-	text-align:right;
-	text-align-last:right;
 	border:0.1em solid #000;
-	background-size: auto 100%;
+	background:#FFF;
 	-webkit-appearance: none;
   -moz-appearance: none;
-  text-indent: 0.1em;
-  text-overflow: '';
 	height:2.588vw;
 	padding-right:0.3em;
 	font-size:1.3vw;
