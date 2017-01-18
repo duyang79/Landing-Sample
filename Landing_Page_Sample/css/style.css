@@ -22,7 +22,7 @@ a:hover {
 }
 #main_div {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   background: #000;
 }
 /* header*/
