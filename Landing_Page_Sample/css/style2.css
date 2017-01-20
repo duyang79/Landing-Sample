@@ -1311,4 +1311,5 @@ display: inline-block;
 }
 #click_button_div span a {
   text-decoration: none !important;
+  color:#FFF !important;
 }
