@@ -1264,21 +1264,21 @@ to {background-position: 0 0;}
 }
 #product_range_div {
   float:right;
-  height:50%;
+  height:40%;
   width:65%;
 }
 #product_range_div p {
   font-family: Impact !important;
   font-weight: bolder !important;
-  font-size: 2.5vw !important;
+  font-size: 2.3vw !important;
   line-height: 1.6em !important;
-  margin-top: 0.5em !important;
+  margin-top: 0.2em !important;
 }
 #click_button_div {
   float:right;
-  height:25%;
-  width:40%;
-  margin: 5% 10%;
+  height:35%;
+  width:50%;
+  margin: 5% 7%;
   background:#CC0000;
   border:1px #CCC solid;
 text-align: center;
@@ -1304,10 +1304,9 @@ display: inline-block;
 #click_button_div span {
   color:#FFF !important;
   height:100% !important;
-  font-family: Arial !important;
-  font-weight: bold !important;
-  font-size: 1.7vw !important;
-  line-height: 2.5em !important;
+  font-family: Impact !important;
+  font-size: 3vw !important;
+  line-height: 2em !important;
 }
 #click_button_div span a {
   text-decoration: none !important;
