@@ -27,7 +27,7 @@ a:hover {
 }
 #main_div {
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
   background: #000;
 }
 /* header*/
@@ -42,9 +42,9 @@ a:hover {
 /* mini reset */
 
 #main_div #menu_div .menu-wrapper >ul >li>div>div>span>a {
-  font-family:  ;
+  font-family: Arial;
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1em;
   color: #EEE;
 }
 #main_div #menu_div .menu-wrapper >ul >li>div>div>ul>li>a {
@@ -190,7 +190,7 @@ a:hover {
 
 #menu_div .menu-wrapper .nav .nav-column {
   float: left;
-  padding: 2% 1.5%;
+  padding: 1% 1.5%;
   width: 22%;
   text-align: left;
 }
@@ -934,6 +934,7 @@ a:hover {
   }*/
   #header_div {
     width: 100%;
+    position: relative;
   }
   #mobile_header_div {
     opacity: 0;
@@ -1224,4 +1225,90 @@ margin-bottom:0.5em;
 }
 .desc_para >p>span>span {
 font-size:1.5em;
+}
+
+/* scrolling div header*/
+#scrolling_div {
+  width:70%;
+  height:40%;
+  position:absolute;
+  top:57%;
+  left:5%;
+  border:2px solid #000;
+  border-radius: 10%;
+background: url(belt.jpg);
+background-repeat: repeat-x;
+background-size: auto 100% ;
+-webkit-animation: backgroundScroll 30s linear infinite;
+animation: backgroundScroll 30s linear infinite;
+z-index: 50;
+}
+@-webkit-keyframes backgroundScroll {
+from {background-position: 100% 0;}
+to {background-position: 0 0;}
+}
+
+@keyframes backgroundScroll {
+from {background-position: 100% 0;}
+to {background-position: 0 0;}
+}
+#catelog_button_div {
+  width:30%;
+  height:40%;
+  position:absolute;
+  top:57%;
+  right:5%;
+  border:2px solid #000;
+  background:#FFFF00;
+  z-index: 49;
+}
+#product_range_div {
+  float:right;
+  height:50%;
+  width:65%;
+}
+#product_range_div p {
+  font-family: Impact;
+  font-weight: bolder;
+  font-size: 1.8em;
+  line-height: 1.5em;
+  margin-top: 0.4em;
+}
+#click_button_div {
+  float:right;
+  height:25%;
+  width:40%;
+  margin: 5% 10%;
+  background:#CC0000;
+  border:1px #CCC solid;
+text-align: center;
+cursor: pointer;
+outline: none;
+border-radius: 10px;
+
+display: inline-block;
+
+-webkit-border-radius: 10px;
+
+-webkit-box-shadow:
+    0px 3px rgba(128,0,0,1), /* gradient effects */
+    0px 4px rgba(118,0,0,1),
+    0px 5px rgba(108,0,0,1),
+    0px 6px rgba(98,0,0,1),
+    0px 7px rgba(88,0,0,1),
+    0px 8px rgba(78,0,0,1),
+    0px 14px 6px -1px rgba(128,128,128,1); /* shadow */
+
+-webkit-transition: -webkit-box-shadow .1s ease-in-out;
+}
+#click_button_div span {
+  color:#FFF;
+  height:100%;
+  line-height: 2.5em;
+  font-family: Arial;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+#click_button_div span a {
+  text-decoration: none !important;
 }
