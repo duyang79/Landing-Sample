@@ -132,7 +132,7 @@ a:hover {
 #top_box label>a:before {
   font-family: 'FontAwesome';
   content:'\f105';
-  line-height: 0;
+  line-height: 1em;
   font-size: 1em;
   padding-right:1em;
 }
