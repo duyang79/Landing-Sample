@@ -25,6 +25,7 @@ a:hover {
 }
 .list_soon::after {
   content: " (Coming Soon!)";
+  font-size:0.8em;
   font-style: italic;
 
 }
@@ -57,7 +58,7 @@ a:hover {
   opacity: 0;
   transition: all 0s;
   line-height: 2em;
-  font-size: 0.7em;
+  font-size: 1em;
   font-family: Arial;
 }
 
@@ -69,26 +70,32 @@ a:hover {
   right:0;
 
 }
-#top_box>#first_ul>li>label {
-
+#top_box #first_ul>li>label{
+  padding-left:2.5%;
 }
 #top_box .second_ul>li>label {
-  text-indent:0.7em;
+  padding-left:3.5%;
+  width:96.5%;
 }
 #top_box .third_ul>li>label {
-  text-indent:1.4em;
+  padding-left:7%;
+  width:93%;
 }
 #top_box .forth_ul>li>label {
-  text-indent:2.1em;
+  padding-left:10.5%;
+  width:89.5%;
 }
-#top_box .third_ul>li>a {
-  padding-left:1.4em;
+#top_box .third_ul>li>div{
+  width:93%;
+  padding-left:7%;
 }
-#top_box .forth_ul>li>a {
-  padding-left:2.1em;
+#top_box .forth_ul>li>div{
+  padding-left:10.5%;
+  width:89.5%;
 }
-#top_box .fifth_ul>li>a {
-padding-left: 2.5em;
+#top_box .fifth_ul>li>div{
+  padding-left: 12.5%;
+  width:87.5%;
 }
 
 
@@ -101,7 +108,7 @@ padding-left: 2.5em;
   background: #660000;
   /*border-bottom: 1px solid #000;*/
   line-height: 2em;
-  font-size: 0.7em;
+  font-size: 1em;
   font-family: Arial;
 }
 #top_box label>a{
@@ -193,7 +200,7 @@ padding-left: 2.5em;
   position:relative;
   background:#993333 !important;
 }
-#top_box .second_collapse_input:checked~.third_ul>li>a {
+#top_box .second_collapse_input:checked~.third_ul>li>div>a {
   opacity: 1;
 }
 #top_box .second_collapse_input:checked~.third_ul>li>.third_label {
@@ -217,7 +224,7 @@ padding-left: 2.5em;
   position: relative;
   background:#bf4040 !important;
 }
-#top_box .third_collapse_input:checked~.forth_ul>li>a {
+#top_box .third_collapse_input:checked~.forth_ul>li>div>a {
   opacity: 1;
 }
 #top_box .third_collapse_input:checked~.forth_ul>li>.forth_label {
@@ -242,7 +249,7 @@ padding-left: 2.5em;
   position: relative;
   background:#d27979 !important;
 }
-#top_box .forth_collapse_input:checked~.fifth_ul>li>a {
+#top_box .forth_collapse_input:checked~.fifth_ul>li>div>a {
   opacity: 1;
 }
 
